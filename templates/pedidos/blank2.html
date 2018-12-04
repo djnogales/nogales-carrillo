@@ -1,0 +1,40 @@
+{% extends 'home/blank.html' %}
+        <!-- Mostar pedidos proveedores -->
+
+        {% block content %}
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Pedidos Proveedor</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Proveedor</th>
+                      <th>Productos</th>
+                      <th>Comentario</th>
+                      <th>Entregado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for pedidoProv in pedidosProveedor %}
+                    <tr>
+                      <td>{{ pedidoProv.proveedor }}</td>
+                      <td>{{ pedidoProv.productos }}</td>
+                      <td>{{ pedidoProv.comentario }}</td>
+                      <td>{{ pedidoProv.entregado }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+
+        </div>
+        {% endblock %}
+ 

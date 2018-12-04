@@ -1,0 +1,44 @@
+{% extends 'home/blank.html' %}
+        <!-- Mostar envios de cliente -->
+
+        {% block content %}
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Envíos de clientes</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Pedido</th>
+                      <th>Transportista</th>
+                      <th>Vehículo</th>
+                      <th>Dirección de envío</th>
+                      <th>Comentario</th>
+                      <th>Fecha</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for envioCliente in enviosCliente %}
+                    <tr>
+                      <td>{{ envioCliente.pedido }}</td>
+                      <td>{{ envioCliente.transportista }}</td>
+                      <td>{{ envioCliente.vehiculo }}</td>
+                      <td>{{ envioCliente.direccionEnvio }}</td>
+                      <td>{{ envioCliente.comentario }}</td>
+                      <td>{{ envioCliente.fecha }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+
+        </div>
+        {% endblock %}
+

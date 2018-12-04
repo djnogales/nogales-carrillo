@@ -1,0 +1,40 @@
+{% extends 'home/blank.html' %}
+        <!-- Mostar proveedores -->
+
+        {% block content %}
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Proveedores</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Matrícula</th>
+                      <th>Tipo</th>
+                      <th>Fecha de matriculación</th>
+                      <th>Kilómetros</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for vehiculo in vehiculos %}
+                    <tr>
+                      <td>{{ vehiculo.matricula }}</td>
+                      <td>{{ vehiculo.tipo }}</td>
+                      <td>{{ vehiculo.fechaMatriculacion }}</td>
+                      <td>{{ vehiculo.kms }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+
+        </div>
+        {% endblock %}
+
